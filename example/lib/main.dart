@@ -250,21 +250,6 @@ class IndexState extends State<Index>
                               ),
                             );
                           })),
-                  // Container(
-                  //     color: Colors.white,
-                  //     padding: EdgeInsets.only(bottom: 30, top: 10),
-                  //     child: MaterialButton(
-                  //       color: Colors.blue,
-                  //       onPressed: () async {
-                  //         print("presss" + Scanning.toString());
-                  //         if (Scanning) {
-                  //           await Ble.getInstance().stopScanBluetooth;
-                  //         } else {
-                  //           await Ble.getInstance().startScanBluetooth;
-                  //         }
-                  //       },
-                  //       child: Text(Scanning ? "停止搜索" : "搜索蓝牙"),
-                  //     ))
                 ],
               )),
           Positioned(
