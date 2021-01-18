@@ -1,0 +1,13 @@
+{
+  "language": "当前使用的是中文",
+  "start_searching_for_attached_bluetooth_devices": "start searching for attached bluetooth devices",
+  "stop_searching_for_attached_bluetooth_devices": "stop searching for attached bluetooth devices",
+  "ble_connecting": "BLE connecting...",
+  "ble_disconnet_connecting": "BLE disconnet connecting...",
+  "connect_time_out_check_whether_ble_is_turned_on": "Connect time out,check whether ble is turned on",
+  "please_input_order": "Please input order",
+  "send": "Send",
+  "set_write_characteristics":"Set Write Characteristics (Single choice)",
+  "set_notify_characteristics": "Set Notify Characteristics (Multiple choice)",
+  "all_service_and_characteristics": "All Service And Characteristics"
+}

@@ -1,0 +1,13 @@
+{
+  "language": "English is currently used",
+  "start_searching_for_attached_bluetooth_devices": "开始搜索附近的蓝牙设备",
+  "stop_searching_for_attached_bluetooth_devices": "开始搜索附近的蓝牙设备",
+  "ble_connecting": "正在连接蓝牙...",
+  "ble_disconnet_connecting": "蓝牙连接断开，正在重新连接蓝牙...",
+  "connect_time_out_check_whether_ble_is_turned_on": "蓝牙连接超时，请检查蓝牙是否打开",
+  "please_input_order": "请输入命令",
+  "send": "发送",
+  "set_write_characteristics":"设置写特征值(单选)",
+  "set_notify_characteristics": "设置通知特征值（多选）",
+  "all_service_and_characteristics": "所有的服务及其子特征值"
+}
