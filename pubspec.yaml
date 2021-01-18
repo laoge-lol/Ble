@@ -1,7 +1,7 @@
 name: ble
-description: A Flutter plugin to BlueTooth.
+description: A Flutter plugin to BlueTooth.Easy use.
 version: 2.0.0
-homepage: https://github.com/laoeg/Flutter_Ble
+homepage: https://github.com/laoeg/Ble
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
