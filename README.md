@@ -39,6 +39,8 @@ To use `flutter_ble`
 -keep class com.lg.flutter_ble.BleDeviceBean  { *; }
 ```
 
+Android minSdkVersion>=18,Don`t forget add permission and request.
+
 ## screeenshots
 
 ![](screenshots/1.jpg) ![](screenshots/2.jpg)
