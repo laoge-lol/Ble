@@ -2,6 +2,8 @@
 
 A Flutter plugin to BlueTooth Device.Supports iOS,Android.Not all methods are supported on all platforms.
 
+CSDN: [https://blog.csdn.net/weixin_39931106/article/details/108166273](https://blog.csdn.net/weixin_39931106/article/details/108166273)
+
 ## Getting Started
 
 To import `ble`'
