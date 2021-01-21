@@ -10,10 +10,10 @@ To import `ble`'
 ```
     import 'package:ble/ble.dart';
 ```
-To use `flutter_ble` 
+To use `ble` 
 ```
     
-    // init flutter_ble 
+    // init ble 
     Ble.getInstance();
     
     // implements
@@ -38,7 +38,7 @@ To use `flutter_ble`
 ## ProGuard
 ```
 
--keep class com.lg.flutter_ble.BleDeviceBean  { *; }
+-keep class com.lg.ble.BleDeviceBean  { *; }
 ```
 
 Android minSdkVersion>=18,Don`t forget add permission and request.
