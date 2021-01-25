@@ -13,9 +13,6 @@ To import `ble`
 To use `ble` 
 ```
     
-    // init ble 
-    Ble.getInstance();
-    
     // implements
     implements DeviceListener
     
