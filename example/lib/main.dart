@@ -151,11 +151,18 @@ class IndexState extends State<Index>
   bool Scanning = false;
 
   @override
-  void initState() {
+  void initState()  {
     // TODO: implement initState
     Ble.getInstance().setDeviceListener(this);
     super.initState();
-    Ble.getInstance().startScanBluetooth;
+    requestPermissionAndStartScan();
+  }
+
+  requestPermissionAndStartScan() async {
+    PermissionStatus permissionStatus = await Permission.location.status;
+    if (!permissionStatus.isUndetermined) {
+      Ble.getInstance().startScanBluetooth;
+    }
   }
 
   @override
@@ -255,11 +262,14 @@ class IndexState extends State<Index>
           Positioned(
               bottom: 30,
               child: GestureDetector(
-                onTap: () {
+                onTap: () async {
                   setState(() {
                     devices.clear();
                   });
-                  Ble.getInstance().startScanBluetooth;
+                  PermissionStatus permissionStatus = await Permission.location.status;
+                  if (!permissionStatus.isUndetermined) {
+                    Ble.getInstance().startScanBluetooth;
+                  }
                 },
                 child: Container(
                   width: 50,

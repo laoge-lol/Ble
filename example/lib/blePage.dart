@@ -220,7 +220,7 @@ class BlePageState extends State<BlePage> implements DeviceListener {
                         // 集合长度大于10就删除第一个数据，集合最大长度为10
                         print(historys);
                         if(historys.length>=10){
-                          historys.removeAt(10);
+                          historys.removeAt(9);
                         }
                         print(historys);
                         // 当集合中已经有相同的指令就不再添加到集合中
