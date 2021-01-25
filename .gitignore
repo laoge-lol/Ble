@@ -5,3 +5,7 @@
 .pub/
 
 build/
+.idea
+.gradle
+ble.iml
+
