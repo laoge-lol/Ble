@@ -5,15 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="719319b8-faf3-4aaa-99c0-cae96dc2d372" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/ble/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/ble/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_30" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -24,10 +27,12 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="D:/ChromeCoreDownloads/parallaxdecoration-main" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -50,7 +55,20 @@
     </task>
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/example/ios/.symlinks/plugins/ble" />
+    </ignored-roots>
+  </component>
   <component name="WindowStateProjectService">
+    <state x="632" y="247" key="EnvironmentVariablesDialog" timestamp="1611193835591">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="632" y="247" key="EnvironmentVariablesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1611193835591" />
+    <state x="689" y="237" key="FileChooserDialogImpl" timestamp="1611195817594">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="689" y="237" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1611195817594" />
     <state width="1587" height="195" key="GridCell.Tab.0.bottom" timestamp="1611020840957">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
@@ -67,5 +85,9 @@
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state width="1587" height="195" key="GridCell.Tab.0.right/0.23.1920.977@0.23.1920.977" timestamp="1611020840957" />
+    <state x="337" y="97" key="SettingsEditor" timestamp="1611193839142">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="337" y="97" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1611193839142" />
   </component>
 </project>

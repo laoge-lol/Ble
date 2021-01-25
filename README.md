@@ -6,15 +6,12 @@ CSDN: [https://blog.csdn.net/weixin_39931106/article/details/108166273](https://
 
 ## Getting Started
 
-To import `ble`'
+To import `ble`
 ```
     import 'package:ble/ble.dart';
 ```
 To use `ble` 
 ```
-    
-    // init ble 
-    Ble.getInstance();
     
     // implements
     implements DeviceListener
