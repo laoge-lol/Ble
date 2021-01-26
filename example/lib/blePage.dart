@@ -652,6 +652,7 @@ class BlePageState extends State<BlePage> implements DeviceListener {
   @override
   void onReceivedDataListener(List<dynamic> byteData) {
     // TODO: implement onReceivedDataListener
+    print("BlePage*****onReceivedDataListener");
     print(byteData);
     List<int> list = byteData.map((e) => e as int).toList();
     String data = "";
@@ -661,7 +662,15 @@ class BlePageState extends State<BlePage> implements DeviceListener {
     }catch(e){
       data = "--";
     }
-    content.add(data + "(" + byteData.toString());
+    print("data******"+data.toString());
+    print("add**********"+byteData.toString().length.toString());
+    String byteStr = byteData.toList().toString();
+    print("byteStr*****"+jsonEncode(byteData));
+    String tempStr = (data + "( ") + json.encode(byteStr);
+    print("all********"+tempStr.length.toString());
+    print("all********"+tempStr);
+    // 这个地方不用json.encode编码显示不出来
+    content.add(data + "(" + json.encode(byteData.toString()));
     setState(() {});
     // 50ms后滚动listview列表，滚动到最下面
     Timer(Duration(milliseconds: 50), () {
