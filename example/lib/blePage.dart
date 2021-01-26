@@ -672,8 +672,8 @@ class BlePageState extends State<BlePage> implements DeviceListener {
     // 这个地方不用json.encode编码显示不出来
     content.add(data + "(" + json.encode(byteData.toString()));
     setState(() {});
-    // 50ms后滚动listview列表，滚动到最下面
-    Timer(Duration(milliseconds: 50), () {
+    // 17ms(大于一帧的最小时间)后滚动listview列表，滚动到最下面
+    Timer(Duration(milliseconds: 17), () {
       listviewController.jumpTo(listviewController.position.maxScrollExtent);
     });
   }
