@@ -280,8 +280,10 @@ public class BlePlugin implements FlutterPlugin, MethodCallHandler, ActivityAwar
         case BleService.ACTION_DATA_AVAILABLE:
           //接收到设备发送过来的数据，发送出去
           byte[] txValue = intent.getByteArrayExtra(BleService.EXTRA_DATA);
-          eventSink.success(sendEvent(EventChannelConstant.DATA_AVAILABLE, txValue));
+          if(txValue.length>5)
+            System.out.println(txValue[4]);
           List<Integer> datas = DataHandlerUtils.bytesToArrayList(txValue);
+          eventSink.success(sendEvent(EventChannelConstant.DATA_AVAILABLE, datas));
           LogUtils.v(TAG, "原始:" + datas + ";接收数据:" + new String(txValue));
           if (txValue.length > 0) {
             String getData = new String(txValue);

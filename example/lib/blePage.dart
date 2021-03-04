@@ -654,15 +654,16 @@ class BlePageState extends State<BlePage> implements DeviceListener {
     // TODO: implement onReceivedDataListener
     print("BlePage*****onReceivedDataListener");
     print(byteData);
-    List<int> list = byteData.map((e) => e as int).toList();
+    List<String> list = byteData.map((e) => e.toString()).toList();
+    List<int> list2 = byteData.map((e) => e as int).toList();
     String data = "";
     try{
       // ASCALL码转换为字符串
-      data = String.fromCharCodes(list);
+      data = String.fromCharCodes(list2);
     }catch(e){
       data = "--";
     }
-    print("data******"+data.toString());
+    print("data******"+list.toString());
     print("add**********"+byteData.toString().length.toString());
     String byteStr = byteData.toList().toString();
     print("byteStr*****"+jsonEncode(byteData));

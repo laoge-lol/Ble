@@ -212,7 +212,7 @@ class Ble {
 //        print(baseEvent.data.runtimeType);
         var data = baseEvent.data as List;
         print(data);
-        List<int> list = data.map((e) => e as int).toList();
+        List<String> list = data.map((e) => e.toString()).toList();
         // print(String.fromCharCodes(list));//ascall转换为String
         if (this.deviceListener != null) {
           deviceListener.onReceivedDataListener(data);
