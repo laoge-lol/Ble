@@ -125,6 +125,9 @@ public class BlePlugin implements FlutterPlugin, MethodCallHandler, ActivityAwar
     mContext.bindService(bindIntent, mServiceConnection, Context.BIND_AUTO_CREATE);
     //注册蓝牙状态改变的广播
     LocalBroadcastManager.getInstance(mContext).registerReceiver(mBleStatusChangeReceiver, makeGattUpdateIntentFilter());
+    final IntentFilter intentFilter = new IntentFilter();
+    intentFilter.addAction(BluetoothAdapter.ACTION_STATE_CHANGED);
+    mContext.registerReceiver(mBleStateReceiver,intentFilter);
   }
 
   /**
@@ -143,7 +146,6 @@ public class BlePlugin implements FlutterPlugin, MethodCallHandler, ActivityAwar
     intentFilter.addAction(BleConstant.USER_UNBIND_DEVICE);
     intentFilter.addAction(BleService.ACTION_DATA_AVAILABLE);
     intentFilter.addAction(BleConstant.ACTION_SEND_DATA_TO_BLE);
-    intentFilter.addAction(BluetoothAdapter.ACTION_STATE_CHANGED);
     intentFilter.addAction(BluetoothDevice.ACTION_ACL_DISCONNECTED);
     intentFilter.addAction(BluetoothDevice.ACTION_ACL_CONNECTED);
     intentFilter.addAction(BleService.ACTION_SERVICE_CHARACTERISTICS);
@@ -170,6 +172,33 @@ public class BlePlugin implements FlutterPlugin, MethodCallHandler, ActivityAwar
     public void onServiceDisconnected(ComponentName componentName) {
       LogUtils.e(TAG, "与service的连接意外丢失:onServiceDisconnected");
       mService = null;
+    }
+  };
+
+  private final BroadcastReceiver mBleStateReceiver = new BroadcastReceiver() {
+    @Override
+    public void onReceive(Context context, Intent intent) {
+      switch (intent.getAction()){
+        case BluetoothAdapter.ACTION_STATE_CHANGED:
+          final int state = intent.getIntExtra(BluetoothAdapter.EXTRA_STATE,
+                  BluetoothAdapter.ERROR);
+          switch (state) {
+            case BluetoothAdapter.STATE_OFF:
+              System.out.println("Bluetooth off");
+              eventSink.success(sendEvent(EventChannelConstant.BLUETOOTHOFF));
+              break;
+            case BluetoothAdapter.STATE_TURNING_OFF:
+              System.out.println("Turning Bluetooth off...");
+              break;
+            case BluetoothAdapter.STATE_ON:
+              System.out.println("Bluetooth on");
+              eventSink.success(sendEvent(EventChannelConstant.BLUETOOTHON));
+              break;
+            case BluetoothAdapter.STATE_TURNING_ON:
+              System.out.println("Turning Bluetooth on...");
+              break;
+          }
+      }
     }
   };
 
@@ -280,10 +309,8 @@ public class BlePlugin implements FlutterPlugin, MethodCallHandler, ActivityAwar
         case BleService.ACTION_DATA_AVAILABLE:
           //接收到设备发送过来的数据，发送出去
           byte[] txValue = intent.getByteArrayExtra(BleService.EXTRA_DATA);
-          if(txValue.length>5)
-            System.out.println(txValue[4]);
+          eventSink.success(sendEvent(EventChannelConstant.DATA_AVAILABLE, txValue));
           List<Integer> datas = DataHandlerUtils.bytesToArrayList(txValue);
-          eventSink.success(sendEvent(EventChannelConstant.DATA_AVAILABLE, datas));
           LogUtils.v(TAG, "原始:" + datas + ";接收数据:" + new String(txValue));
           if (txValue.length > 0) {
             String getData = new String(txValue);
@@ -294,26 +321,7 @@ public class BlePlugin implements FlutterPlugin, MethodCallHandler, ActivityAwar
             }
           }
           break;
-        case BluetoothAdapter.ACTION_STATE_CHANGED:
-          final int state = intent.getIntExtra(BluetoothAdapter.EXTRA_STATE,
-                  BluetoothAdapter.ERROR);
-          switch (state) {
-            case BluetoothAdapter.STATE_OFF:
-              System.out.println("Bluetooth off");
-              eventSink.success(sendEvent(EventChannelConstant.BLUETOOTHOFF));
-              break;
-            case BluetoothAdapter.STATE_TURNING_OFF:
-              System.out.println("Turning Bluetooth off...");
-              break;
-            case BluetoothAdapter.STATE_ON:
-              System.out.println("Bluetooth on");
-              eventSink.success(sendEvent(EventChannelConstant.BLUETOOTHON));
-              break;
-            case BluetoothAdapter.STATE_TURNING_ON:
-              System.out.println("Turning Bluetooth on...");
-              break;
-          }
-          break;
+
         case BluetoothDevice.ACTION_ACL_CONNECTED:
           Toast.makeText(context, "蓝牙设备已连接", Toast.LENGTH_SHORT).show();
           break;

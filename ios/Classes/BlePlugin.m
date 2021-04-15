@@ -105,6 +105,9 @@ int const BLUETOOTH_NOT_FOUND=13;//没有找到蓝牙
             NSLog(@"CBManagerStatePoweredOn");
             // 蓝牙开启监听
             _isEnable = true;
+            if(_eventSink){
+                _eventSink([self sendEvent:BLUETOOTHON]);
+            }
             // 这个参数设置了，扫描到的设备会继续被扫描，如果不需要可以设置为nil
             //            NSMutableDictionary* option = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:YES],CBCentralManagerScanOptionAllowDuplicatesKey, nil];
             // 开始扫描蓝牙设备
@@ -118,7 +121,7 @@ int const BLUETOOTH_NOT_FOUND=13;//没有找到蓝牙
                 NSLog(@"iOS 蓝牙关闭，外设不为空，发送断开蓝牙通知");
                 _state = 0;
                 _isConnected = false;
-                _eventSink([self sendEvent:STATE_DISCONNECTED]);
+                _eventSink([self sendEvent:BLUETOOTHOFF]);
             }else{
                 NSLog(@"ISO 外设为空");
             }
