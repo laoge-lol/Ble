@@ -100,7 +100,7 @@ class _MyAppState extends State<MyApp> {
             context: context,
             locale: _locale,
             child: Scaffold(
-              resizeToAvoidBottomPadding: false,
+              resizeToAvoidBottomInset: false,
               appBar: AppBar(
                 title: Text("Flutter Ble"),
               ),

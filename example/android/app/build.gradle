@@ -45,6 +45,13 @@ android {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig signingConfigs.debug
+            consumerProguardFiles "proguard-rules.pro"buildConfigField "boolean", "LOG_DEBUG", "false" //不显示log
+            zipAlignEnabled true     //Zipalign优化
+            shrinkResources true    // 移除无用的resource文件
+            signingConfig signingConfigs.debug
+            minifyEnabled true
+            consumerProguardFiles "proguard-rules.pro"
+            useProguard true
         }
     }
 }
