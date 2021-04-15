@@ -7,9 +7,6 @@
     <list default="true" id="719319b8-faf3-4aaa-99c0-cae96dc2d372" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apk/ble_20210118.apk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apk/ble_20210119.apk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apk/ble_20210125.apk" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
