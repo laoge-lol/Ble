@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="719319b8-faf3-4aaa-99c0-cae96dc2d372" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/lg/ble/BlePlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/lg/ble/BlePlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/BlePlugin.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/BlePlugin.m" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
